@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLAM &mdash; BestMan_Pybullet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+    <link rel="shortcut icon" href="../_static/AL_logo.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/BestMan_logo_AL.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">SLAM</a><ul>
+<li><a class="reference internal" href="#SLAM.slam.simple_slam"><code class="docutils literal notranslate"><span class="pre">simple_slam()</span></code></a></li>
+<li><a class="reference internal" href="#SLAM.utils.AreaBounds"><code class="docutils literal notranslate"><span class="pre">AreaBounds</span></code></a><ul>
+<li><a class="reference internal" href="#SLAM.utils.AreaBounds.x_min"><code class="docutils literal notranslate"><span class="pre">AreaBounds.x_min</span></code></a></li>
+<li><a class="reference internal" href="#SLAM.utils.AreaBounds.y_min"><code class="docutils literal notranslate"><span class="pre">AreaBounds.y_min</span></code></a></li>
+<li><a class="reference internal" href="#SLAM.utils.AreaBounds.x_max"><code class="docutils literal notranslate"><span class="pre">AreaBounds.x_max</span></code></a></li>
+<li><a class="reference internal" href="#SLAM.utils.AreaBounds.y_max"><code class="docutils literal notranslate"><span class="pre">AreaBounds.y_max</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#SLAM.utils.plot_rectangle"><code class="docutils literal notranslate"><span class="pre">plot_rectangle()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BestMan_Pybullet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">SLAM</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AutonoBot-Lab/BestMan_Pybullet/blob/grasp/docs/references/SLAM.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-SLAM.slam">
+<span id="slam"></span><h1>SLAM<a class="headerlink" href="#module-SLAM.slam" title="Permalink to this heading"></a></h1>
+<p># &#64;FileName       : slam.py
+# &#64;Time           : 2024-08-03 15:08:53
+# &#64;Author         : yk
+# &#64;Email          : <a class="reference external" href="mailto:yangkui1127&#37;&#52;&#48;gmail&#46;com">yangkui1127<span>&#64;</span>gmail<span>&#46;</span>com</a>
+# &#64;Description:   : A simple slam method in pybullet sim</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="SLAM.slam.simple_slam">
+<span class="sig-prename descclassname"><span class="pre">SLAM.slam.</span></span><span class="sig-name descname"><span class="pre">simple_slam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SLAM/slam.html#simple_slam"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SLAM.slam.simple_slam" title="Permalink to this definition"></a></dt>
+<dd><p>Perform a simple SLAM (Simultaneous Localization and Mapping) operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> (<em>pybullet</em>) – The pybullet client object.</p></li>
+<li><p><strong>robot</strong> (<em>object</em>) – The robot object.</p></li>
+<li><p><strong>enable_plot</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag to enable or disable plotting of the SLAM visualization. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of obstacle bounds in the format [x_min, y_min, x_max, y_max].</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-SLAM.utils"></span><dl class="py class">
+<dt class="sig sig-object py" id="SLAM.utils.AreaBounds">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SLAM.utils.</span></span><span class="sig-name descname"><span class="pre">AreaBounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obstacles_bounds</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SLAM/utils.html#AreaBounds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SLAM.utils.AreaBounds" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to represent the bounding area for navigation obstacles.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SLAM.utils.AreaBounds.x_min">
+<span class="sig-name descname"><span class="pre">x_min</span></span><a class="headerlink" href="#SLAM.utils.AreaBounds.x_min" title="Permalink to this definition"></a></dt>
+<dd><p>Minimum x-coordinate of the bounding area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SLAM.utils.AreaBounds.y_min">
+<span class="sig-name descname"><span class="pre">y_min</span></span><a class="headerlink" href="#SLAM.utils.AreaBounds.y_min" title="Permalink to this definition"></a></dt>
+<dd><p>Minimum y-coordinate of the bounding area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SLAM.utils.AreaBounds.x_max">
+<span class="sig-name descname"><span class="pre">x_max</span></span><a class="headerlink" href="#SLAM.utils.AreaBounds.x_max" title="Permalink to this definition"></a></dt>
+<dd><p>Maximum x-coordinate of the bounding area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="SLAM.utils.AreaBounds.y_max">
+<span class="sig-name descname"><span class="pre">y_max</span></span><a class="headerlink" href="#SLAM.utils.AreaBounds.y_max" title="Permalink to this definition"></a></dt>
+<dd><p>Maximum y-coordinate of the bounding area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SLAM.utils.plot_rectangle">
+<span class="sig-prename descclassname"><span class="pre">SLAM.utils.</span></span><span class="sig-name descname"><span class="pre">plot_rectangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_max</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/SLAM/utils.html#plot_rectangle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SLAM.utils.plot_rectangle" title="Permalink to this definition"></a></dt>
+<dd><p>Plots a rectangle on the current matplotlib axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x_min</strong> (<em>float</em>) – Minimum x-coordinate of the rectangle.</p></li>
+<li><p><strong>y_min</strong> (<em>float</em>) – Minimum y-coordinate of the rectangle.</p></li>
+<li><p><strong>x_max</strong> (<em>float</em>) – Maximum x-coordinate of the rectangle.</p></li>
+<li><p><strong>y_max</strong> (<em>float</em>) – Maximum y-coordinate of the rectangle.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, kui yang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

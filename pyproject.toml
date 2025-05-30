@@ -1,0 +1,13 @@
+[tool.black]
+exclude = '''
+/(
+    Asset
+  | Config
+  | Install
+)/
+'''
+
+
+[tool.isort]
+profile = "black"
+skip = ["Asset", "Config", "Install"]

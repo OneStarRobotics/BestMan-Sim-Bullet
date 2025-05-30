@@ -1,0 +1,19 @@
+# Client parameters
+Client:
+  enable_Debug: True
+
+# Visualizer params
+Visualizer:
+  Camera: 
+      dist: 1.2
+      position: [1.15, 0.21, 1.07]
+      yaw: -90.0
+      pitch: -27.1
+
+# Robot params
+Robot:
+  # arm_init_jointValues: [0.98, 0.458, 0.31, -2.24, -0.30, 2.66, 2.32]                  # The initial angle of arm joint
+  arm_reset_jointValues: [0.125, 0.039, 0.094, -1.587, 0.062, 1.765, 0.781]
+  arm_urdf_path: "Asset/Robot/mobile_manipulator/arm/franka/urdf/panda.urdf"          # arm urdf
+  arm_num_dofs: 7                                      # 7 DOF
+  eef_id: 11

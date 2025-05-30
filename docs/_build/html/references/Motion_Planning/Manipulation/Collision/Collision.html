@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collision &mdash; BestMan_Pybullet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/AL_logo.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+              <img src="../../../../_static/BestMan_logo_AL.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../project_structure.html">Project Structure Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">BestMan_Pybullet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Collision</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AutonoBot-Lab/BestMan_Pybullet/blob/grasp/docs/references/Motion_Planning/Manipulation/Collision/Collision.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="collision">
+<h1>Collision<a class="headerlink" href="#collision" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Motion_Planning.Manipulation.Collision.Collision">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Motion_Planning.Manipulation.Collision.</span></span><span class="sig-name descname"><span class="pre">Collision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Motion_Planning/Manipulation/Collision/Collision.html#Collision"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Motion_Planning.Manipulation.Collision.Collision" title="Permalink to this definition"></a></dt>
+<dd><p>A class for handling collision detection.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Motion_Planning.Manipulation.Collision.Collision.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">robot</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Motion_Planning/Manipulation/Collision/Collision.html#Collision.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Motion_Planning.Manipulation.Collision.Collision.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initializes the Collision class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>robot</strong> (<em>Robot</em>) – The robot object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Motion_Planning.Manipulation.Collision.Collision.set_obstacles">
+<span class="sig-name descname"><span class="pre">set_obstacles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Motion_Planning/Manipulation/Collision/Collision.html#Collision.set_obstacles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Motion_Planning.Manipulation.Collision.Collision.set_obstacles" title="Permalink to this definition"></a></dt>
+<dd><p>Add obstacles to the scene.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Motion_Planning.Manipulation.Collision.Collision.add_obstacle">
+<span class="sig-name descname"><span class="pre">add_obstacle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obstacle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Motion_Planning/Manipulation/Collision/Collision.html#Collision.add_obstacle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Motion_Planning.Manipulation.Collision.Collision.add_obstacle" title="Permalink to this definition"></a></dt>
+<dd><p>Add obstacle to the list of obstacles.
+This is useful for adding a specific obstacle to the list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obstacle_id</strong> – id of the obstacle to add.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Motion_Planning.Manipulation.Collision.Collision.remove_obstacle">
+<span class="sig-name descname"><span class="pre">remove_obstacle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obstacle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Motion_Planning/Manipulation/Collision/Collision.html#Collision.remove_obstacle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Motion_Planning.Manipulation.Collision.Collision.remove_obstacle" title="Permalink to this definition"></a></dt>
+<dd><p>Remove obstacle from the list of obstacles.
+This is useful for removing a specific obstacle from the list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obstacle_id</strong> – id of the obstacle to remove.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Motion_Planning.Manipulation.Collision.Collision.get_obstacles_info">
+<span class="sig-name descname"><span class="pre">get_obstacles_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Motion_Planning/Manipulation/Collision/Collision.html#Collision.get_obstacles_info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Motion_Planning.Manipulation.Collision.Collision.get_obstacles_info" title="Permalink to this definition"></a></dt>
+<dd><p>Check obstacles in the scene and print them to the console.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Motion_Planning.Manipulation.Collision.Collision.setup_collision_detection">
+<span class="sig-name descname"><span class="pre">setup_collision_detection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self_collisions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_collision_links</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Motion_Planning/Manipulation/Collision/Collision.html#Collision.setup_collision_detection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Motion_Planning.Manipulation.Collision.Collision.setup_collision_detection" title="Permalink to this definition"></a></dt>
+<dd><p>Sets up collision detection.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self_collisions</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to check for self-collisions. Defaults to True.</p></li>
+<li><p><strong>allow_collision_links</strong> (<em>list</em><em>, </em><em>optional</em>) – Links that are allowed to collide. Defaults to [].</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Motion_Planning.Manipulation.Collision.Collision.is_state_valid">
+<span class="sig-name descname"><span class="pre">is_state_valid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Motion_Planning/Manipulation/Collision/Collision.html#Collision.is_state_valid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Motion_Planning.Manipulation.Collision.Collision.is_state_valid" title="Permalink to this definition"></a></dt>
+<dd><p>Checks if a given state is valid (i.e., collision-free).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>list</em>) – The state to check.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the state is valid, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, kui yang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

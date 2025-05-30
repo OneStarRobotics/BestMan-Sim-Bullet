@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motion_Planning.Manipulation.Collision.Collision &mdash; BestMan_Pybullet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/AL_logo.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+              <img src="../../../../_static/BestMan_logo_AL.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../references/project_structure.html">Project Structure Overview</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">BestMan_Pybullet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">Motion_Planning.Manipulation.Collision.Collision</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for Motion_Planning.Manipulation.Collision.Collision</h1><div class="highlight"><pre>
+<span></span><span class="c1"># !/usr/bin/env python</span>
+<span class="c1"># -*- encoding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"># @FileName       : Collision.py</span>
+<span class="sd"># @Time           : 2024-08-03 15:06:10</span>
+<span class="sd"># @Author         : yk</span>
+<span class="sd"># @Email          : yangkui1127@gmail.com</span>
+<span class="sd"># @Description:   : Collision detection module</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="Collision"><a class="viewcode-back" href="../../../../references/Motion_Planning/Manipulation/Collision/Collision.html#Motion_Planning.Manipulation.Collision.Collision">[docs]</a><span class="k">class</span> <span class="nc">Collision</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A class for handling collision detection.&quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Collision.__init__"><a class="viewcode-back" href="../../../../references/Motion_Planning/Manipulation/Collision/Collision.html#Motion_Planning.Manipulation.Collision.Collision.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">robot</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initializes the Collision class.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            robot (Robot): The robot object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">robot</span> <span class="o">=</span> <span class="n">robot</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">client</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">arm_id</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">sim_get_arm_id</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">joint_idx</span> <span class="o">=</span> <span class="n">robot</span><span class="o">.</span><span class="n">sim_get_arm_joint_idx</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">obstacles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_obstacles</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Collision.set_obstacles"><a class="viewcode-back" href="../../../../references/Motion_Planning/Manipulation/Collision/Collision.html#Motion_Planning.Manipulation.Collision.Collision.set_obstacles">[docs]</a>    <span class="k">def</span> <span class="nf">set_obstacles</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add obstacles to the scene.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">num_items</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">getNumBodies</span><span class="p">()</span>
+
+        <span class="c1"># add object in scene, skip arm</span>
+        <span class="k">for</span> <span class="n">item_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_items</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">item_id</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">arm_id</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">obstacles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+
+        <span class="c1"># update collision detect pair</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup_collision_detection</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Collision.add_obstacle"><a class="viewcode-back" href="../../../../references/Motion_Planning/Manipulation/Collision/Collision.html#Motion_Planning.Manipulation.Collision.Collision.add_obstacle">[docs]</a>    <span class="k">def</span> <span class="nf">add_obstacle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obstacle</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add obstacle to the list of obstacles.</span>
+<span class="sd">        This is useful for adding a specific obstacle to the list.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            obstacle_id: id of the obstacle to add.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">obstacle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">obstacle_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">resolve_object_id</span><span class="p">(</span><span class="n">obstacle</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">obstacles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obstacle_id</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">setup_collision_detection</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="Collision.remove_obstacle"><a class="viewcode-back" href="../../../../references/Motion_Planning/Manipulation/Collision/Collision.html#Motion_Planning.Manipulation.Collision.Collision.remove_obstacle">[docs]</a>    <span class="k">def</span> <span class="nf">remove_obstacle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obstacle</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove obstacle from the list of obstacles.</span>
+<span class="sd">        This is useful for removing a specific obstacle from the list.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            obstacle_id: id of the obstacle to remove.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">obstacle</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">obstacle_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">resolve_object_id</span><span class="p">(</span><span class="n">obstacle</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">obstacle_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacles</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">obstacles</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">obstacle_id</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">setup_collision_detection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obstacles</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Collision.get_obstacles_info"><a class="viewcode-back" href="../../../../references/Motion_Planning/Manipulation/Collision/Collision.html#Motion_Planning.Manipulation.Collision.Collision.get_obstacles_info">[docs]</a>    <span class="k">def</span> <span class="nf">get_obstacles_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check obstacles in the scene and print them to the console.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacles</span> <span class="o">==</span> <span class="p">[]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;[OMPL Planner] </span><span class="se">\033</span><span class="s2">[33mwarning</span><span class="se">\033</span><span class="s2">[0m: Obstacle list is empty&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">obstacle_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacles</span><span class="p">:</span>
+                <span class="n">item_info</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">getBodyInfo</span><span class="p">(</span><span class="n">obstacle_id</span><span class="p">)</span>
+                <span class="n">item_name</span> <span class="o">=</span> <span class="n">item_info</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;[OMPL Planner] </span><span class="se">\033</span><span class="s2">[34mInfo</span><span class="se">\033</span><span class="s2">[0m: Obstacle Name: </span><span class="si">{</span><span class="n">item_name</span><span class="si">}</span><span class="s2">, ID: </span><span class="si">{</span><span class="n">obstacle_id</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Collision.setup_collision_detection"><a class="viewcode-back" href="../../../../references/Motion_Planning/Manipulation/Collision/Collision.html#Motion_Planning.Manipulation.Collision.Collision.setup_collision_detection">[docs]</a>    <span class="k">def</span> <span class="nf">setup_collision_detection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">self_collisions</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">allow_collision_links</span><span class="o">=</span><span class="p">[]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Sets up collision detection.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            self_collisions (bool, optional): Whether to check for self-collisions. Defaults to True.</span>
+<span class="sd">            allow_collision_links (list, optional): Links that are allowed to collide. Defaults to [].</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">all_joint_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">sim_get_arm_all_joint_idx</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_link_pairs</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">get_self_link_pairs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arm_id</span><span class="p">,</span> <span class="n">all_joint_idx</span><span class="p">)</span> <span class="k">if</span> <span class="n">self_collisions</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="p">)</span>
+
+        <span class="n">moving_links</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">item</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">get_moving_links</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arm_id</span><span class="p">,</span> <span class="n">all_joint_idx</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">allow_collision_links</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+        <span class="n">moving_bodies</span> <span class="o">=</span> <span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">arm_id</span><span class="p">,</span> <span class="n">moving_links</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_body_pairs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">product</span><span class="p">(</span><span class="n">moving_bodies</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacles</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="Collision.is_state_valid"><a class="viewcode-back" href="../../../../references/Motion_Planning/Manipulation/Collision/Collision.html#Motion_Planning.Manipulation.Collision.Collision.is_state_valid">[docs]</a>    <span class="k">def</span> <span class="nf">is_state_valid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Checks if a given state is valid (i.e., collision-free).</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            state (list): The state to check.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the state is valid, False otherwise.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">robot</span><span class="o">.</span><span class="n">sim_set_arm_to_joint_values</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+        <span class="c1"># # check self-collision</span>
+        <span class="c1"># for link1, link2 in self.check_link_pairs:</span>
+        <span class="c1">#     if pairwise_link_collision(self.arm_id, link1, self.arm_id, link2):</span>
+        <span class="c1">#         return False</span>
+
+        <span class="c1"># check collision against environment</span>
+        <span class="k">for</span> <span class="n">body1</span><span class="p">,</span> <span class="n">body2</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_body_pairs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">pairwise_collision</span><span class="p">(</span><span class="n">body1</span><span class="p">,</span> <span class="n">body2</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, kui yang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+# Visualizer params
+Visualizer:
+  Camera: 
+      dist: 1.7
+      position: [1.75, -0.03, 0.73]
+      yaw: -122.4
+      pitch: -15.9
+
+Client:
+  plane_urdf_path: "plane.urdf"
+
+# Robot params
+Robot:
+  base_init_pose: [1, 0, 0.32, 0.0, 0.0, "math.pi / 3"]
+  base_urdf_path: "Asset/Robot/mobile_manipulator/base/ranger_mini_v3_with_pillar/urdf/ranger_mini_v3_with_pillar.urdf"                 # base urdf path
+  arm_urdf_path: "Asset/Robot/mobile_manipulator/arm/realman/urdf/rml63_6f_ag95.urdf"      # arm urdf path
+  arm_num_dofs: 5                                                    # arm joint index of 6 DOF
+  arm_reset_jointValues: [-1.57, 1.552, 0, 1.504, 2.844]                                # The initial angle of arm joint
+  arm_place_height: 1.075
+  eef_id: 6                                                                 # The index of the end effector
+  tcp_height: 0.11                                                                      # The height of the tcp link

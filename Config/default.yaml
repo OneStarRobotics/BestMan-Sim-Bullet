@@ -1,0 +1,74 @@
+# Client parameters
+Client:
+  enable_GUI: True                # If True, the GUI will be enabled.
+  enable_capture: True            # If True, custom image size
+  width: 1080                     # W
+  height: 720                     # H
+  enable_Debug: False              # If False, the debug visualizer will be disabled.
+  shadows: False                   # If True, scene shadows will be enabled.
+  Gravity: [0, 0, -9.8]           # Simulation environment gravity coefficient
+  # numSolverIterations: 10       # Set the number of constraint solver iterations; Higher values increase precision but also increase computation time
+  plane_urdf_path: 'plane.urdf'
+  # plane_urdf_path: 'Asset/Scene/Kitchen_models/plane/greyPlane/plane.urdf'   # plane urdf
+  frequency: 240                  # simulation frequency
+  timeout : 100.0                 # maximum time for planning
+  blender: False
+
+# Visualizer params
+Visualizer:
+  Camera: 
+      dist: 1.0                      # The distance from the camera to the observation target
+      position: [1.7, 3.68, 1.95]    # The observation target position
+      yaw: -86.4                     # Control the direction of camera horizontal rotation, 
+      pitch: -52.3                   # Control the direction of camera vertical rotation
+
+
+# Controller params
+Controller:
+  target_distance : 0.0             # PIDController: The target value
+  Kp : 0.01                         # PIDController: Proportional Gain
+  Ki : 0.0                          # PIDController: Integral Gain
+  Kd : 0.0                          # PIDController: Derivative Gain
+
+
+# Robot params
+Robot:
+  base_init_pose: [1, 0, 0, 0.0, 0.0, "math.pi / 2"]                                            # The initial pose of base and arm
+  base_urdf_path: "Asset/Robot/mobile_manipulator/base/segbot/urdf/segbot.urdf"                 # base urdf path
+  arm_urdf_path: "Asset/Robot/mobile_manipulator/arm/universal/urdf/ur5e_vacuum_long.urdf"      # arm urdf path
+  arm_num_dofs: 6                                                                               # arm joint index of 6 DOF
+  arm_reset_jointValues: [0, -1.57, 1.5, -1.57, -1.57, 0]                                       # The reset angle of arm joint
+  arm_place_height: 1.03                                                                        # base height (arm place height slightly higher than the base)
+  eef_id: 6                                                                                     # The index of the end effector
+  tcp_link: 11                                                                                  # The index of the tcp link
+  tcp_height: 0.11                                                                              # The height of the tcp link
+  
+
+# Camera params
+Camera:
+  fov: 60             # Field of View
+  width: 1920         # width
+  height: 1080        # height
+  nearVal: 0.01       # Camera near viewing distance
+  farVal: 20          # Camera far viewing distance
+  head_tilt: -0.45
+  min_depth: 0.0      # Minimum depth of point cloud
+  max_depth: 1.0      # Maximum depth of point cloud
+  
+
+Grasp_Pose_Estimation:
+  AnyGrasp:
+    checkpoint_path: "./checkpoints/checkpoint_detection.tar" # Model checkpoint path
+    max_gripper_width: 0.08  # Maximum gripper width
+    gripper_height: 0.03   # Gripper height
+    debug: True # Enable visualization
+    sampling_rate: 1.0  # Sampling rate of points [<= 1]
+    top_down_grasp: true  # top_down_grasp
+    output_dir: "./output/sim_test"
+
+# Ompl planner params
+Planner:
+  # planner: "RRTConnect"       # planner
+  planner: "BITstar"          # planner (The effect seems to be better than RTT)
+  planning_time: 5.0          # Maximum planning time
+  interpolate_num: 50         # The number of linear interpolation insertion points.

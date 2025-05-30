@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoboticsToolBox &mdash; BestMan_Pybullet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+
+  
+    <link rel="shortcut icon" href="../_static/AL_logo.png"/>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/BestMan_logo_AL.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">RoboticsToolBox</a><ul>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_ur5e_vacuum_long</span></code></a><ul>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.__init__"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_ur5e_vacuum_long.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.sim_open_vacuum_gripper"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_ur5e_vacuum_long.sim_open_vacuum_gripper()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.sim_close_vacuum_gripper"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_ur5e_vacuum_long.sim_close_vacuum_gripper()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.sim_create_movable_constraint"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_ur5e_vacuum_long.sim_create_movable_constraint()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.sim_remove_movable_constraint"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_ur5e_vacuum_long.sim_remove_movable_constraint()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.pick"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_ur5e_vacuum_long.pick()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.place"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_ur5e_vacuum_long.place()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.pick_place"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_ur5e_vacuum_long.pick_place()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_panda"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_panda</span></code></a><ul>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_panda.__init__"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_panda.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_panda.sim_open_gripper"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_panda.sim_open_gripper()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_panda.sim_close_gripper"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_panda.sim_close_gripper()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_panda.sim_move_gripper"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_panda.sim_move_gripper()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_panda.sim_create_gripper_constraint"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_panda.sim_create_gripper_constraint()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_panda.sim_remove_gripper_constraint"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_panda.sim_remove_gripper_constraint()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_panda.pick"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_panda.pick()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_panda.place"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_panda.place()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_panda.pick_place"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_panda.pick_place()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim_panda.align_grasp_pose_to_tcp"><code class="docutils literal notranslate"><span class="pre">Bestman_sim_panda.align_grasp_pose_to_tcp()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim"><code class="docutils literal notranslate"><span class="pre">Bestman_sim</span></code></a><ul>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.client"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.client</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.client_id"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.client_id</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.target_distance"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.target_distance</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.controller"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.controller</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.rotated"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.rotated</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.init_pos"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.init_pos</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.base_id"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.base_id</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.arm_id"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.arm_id</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.arm_joints_idx"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.arm_joints_idx</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.arm_height"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.arm_height</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.end_effector_index"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.end_effector_index</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.tcp_link"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.tcp_link</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.tcp_height"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.tcp_height</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.visualizer"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.visualizer</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.gripper_id"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.gripper_id</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.__init__"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_base_id"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_base_id()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_current_base_pose"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_current_base_pose()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_stop_base"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_stop_base()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_rotate_base"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_rotate_base()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_action"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_action()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_move_base_to_waypoint"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_move_base_to_waypoint()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_navigate_base"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_navigate_base()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_calculate_nav_error"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_calculate_nav_error()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_arm_id"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_arm_id()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_DOF"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_DOF()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_arm_joint_idx"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_arm_joint_idx()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_arm_all_joint_idx"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_arm_all_joint_idx()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_tcp_link"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_tcp_link()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_tcp_link_height"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_tcp_link_height()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_end_effector_link"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_end_effector_link()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_arm_all_jointInfo"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_arm_all_jointInfo()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_joint_bounds"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_joint_bounds()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_current_joint_values"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_current_joint_values()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_current_end_effector_pose"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_current_end_effector_pose()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_set_arm_to_joint_values"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_set_arm_to_joint_values()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_debug_set_arm_to_joint_values"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_debug_set_arm_to_joint_values()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_move_arm_to_joint_values"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_move_arm_to_joint_values()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_joints_to_cartesian"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_joints_to_cartesian()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_cartesian_to_joints"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_cartesian_to_joints()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_rotate_end_effector"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_rotate_end_effector()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_move_end_effector_to_goal_pose"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_move_end_effector_to_goal_pose()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_execute_trajectory"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_execute_trajectory()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_calculate_IK_error"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_calculate_IK_error()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_robot_size"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_robot_size()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_sync_base_arm_pose"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_sync_base_arm_pose()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_update_camera"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_update_camera()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_camera_pose"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_camera_pose()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_camera_rgb_image"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_camera_rgb_image()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_camera_depth_image"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_camera_depth_image()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_get_camera_3d_points"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_get_camera_3d_points()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_visualize_camera_3d_points"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_visualize_camera_3d_points()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Bestman_sim.sim_trans_camera_to_world"><code class="docutils literal notranslate"><span class="pre">Bestman_sim.sim_trans_camera_to_world()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#RoboticsToolBox.Pose"><code class="docutils literal notranslate"><span class="pre">Pose</span></code></a><ul>
+<li><a class="reference internal" href="#RoboticsToolBox.Pose.__init__"><code class="docutils literal notranslate"><span class="pre">Pose.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Pose.get_position"><code class="docutils literal notranslate"><span class="pre">Pose.get_position()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Pose.get_orientation"><code class="docutils literal notranslate"><span class="pre">Pose.get_orientation()</span></code></a></li>
+<li><a class="reference internal" href="#RoboticsToolBox.Pose.print"><code class="docutils literal notranslate"><span class="pre">Pose.print()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">BestMan_Pybullet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">RoboticsToolBox</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AutonoBot-Lab/BestMan_Pybullet/blob/grasp/docs/references/RoboticsToolBox.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="roboticstoolbox">
+<h1>RoboticsToolBox<a class="headerlink" href="#roboticstoolbox" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_ur5e_vacuum_long">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RoboticsToolBox.</span></span><span class="sig-name descname"><span class="pre">Bestman_sim_ur5e_vacuum_long</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_ur5e_vacuum_long.html#Bestman_sim_ur5e_vacuum_long"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#RoboticsToolBox.Bestman_sim" title="RoboticsToolBox.Bestman_sim.Bestman_sim"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bestman_sim</span></code></a></p>
+<p>A class representing a simulation for the Bestman robot equipped with a UR5e arm and a vacuum gripper.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_ur5e_vacuum_long.html#Bestman_sim_ur5e_vacuum_long.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the Bestman_sim_ur5e_vacuum_long with the given parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> (<em>int</em>) – The PyBullet client ID.</p></li>
+<li><p><strong>visualizer</strong> (<em>bool</em>) – Flag indicating whether visualization is enabled.</p></li>
+<li><p><strong>cfg</strong> (<em>dict</em>) – Configuration settings.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.sim_open_vacuum_gripper">
+<span class="sig-name descname"><span class="pre">sim_open_vacuum_gripper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_ur5e_vacuum_long.html#Bestman_sim_ur5e_vacuum_long.sim_open_vacuum_gripper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.sim_open_vacuum_gripper" title="Permalink to this definition"></a></dt>
+<dd><p>Activate or deactivate the gripper for a movable object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object</strong> (<em>str</em>) – The name or ID of the object related to gripper action.</p></li>
+<li><p><strong>link_id</strong> (<em>int</em>) – The ID of the link on the object to be grasped.</p></li>
+<li><p><strong>value</strong> (<em>int</em>) – 0 or 1, where 0 means deactivate (ungrasp) and 1 means activate (grasp).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.sim_close_vacuum_gripper">
+<span class="sig-name descname"><span class="pre">sim_close_vacuum_gripper</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_ur5e_vacuum_long.html#Bestman_sim_ur5e_vacuum_long.sim_close_vacuum_gripper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.sim_close_vacuum_gripper" title="Permalink to this definition"></a></dt>
+<dd><p>remove fixed constraint</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.sim_create_movable_constraint">
+<span class="sig-name descname"><span class="pre">sim_create_movable_constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_ur5e_vacuum_long.html#Bestman_sim_ur5e_vacuum_long.sim_create_movable_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.sim_create_movable_constraint" title="Permalink to this definition"></a></dt>
+<dd><p>create constraint between end effector and joint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object</strong> (<em>str</em>) – The name or ID of the object related to gripper action.</p></li>
+<li><p><strong>link_id</strong> (<em>int</em>) – The ID of the link on the object to create constraint.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.sim_remove_movable_constraint">
+<span class="sig-name descname"><span class="pre">sim_remove_movable_constraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_ur5e_vacuum_long.html#Bestman_sim_ur5e_vacuum_long.sim_remove_movable_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.sim_remove_movable_constraint" title="Permalink to this definition"></a></dt>
+<dd><p>remove constraint between end effector and joint</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.pick">
+<span class="sig-name descname"><span class="pre">pick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_ur5e_vacuum_long.html#Bestman_sim_ur5e_vacuum_long.pick"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.pick" title="Permalink to this definition"></a></dt>
+<dd><p>Pick up the specified object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>object</strong> (<em>str</em>) – The name or ID of the object to be picked up.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.place">
+<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">place_pose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_ur5e_vacuum_long.html#Bestman_sim_ur5e_vacuum_long.place"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.place" title="Permalink to this definition"></a></dt>
+<dd><p>Place an object at the specified place pose.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>place_pose</strong> (<a class="reference internal" href="#RoboticsToolBox.Pose" title="RoboticsToolBox.Pose"><em>Pose</em></a>) – The pose to place object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.pick_place">
+<span class="sig-name descname"><span class="pre">pick_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">place_pose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_ur5e_vacuum_long.html#Bestman_sim_ur5e_vacuum_long.pick_place"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_ur5e_vacuum_long.pick_place" title="Permalink to this definition"></a></dt>
+<dd><p>Perform a pick and place operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object</strong> (<em>str</em>) – The name or ID of the object to be picked up.</p></li>
+<li><p><strong>place_pose</strong> (<a class="reference internal" href="#RoboticsToolBox.Pose" title="RoboticsToolBox.Pose"><em>Pose</em></a>) – The pose to place object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_panda">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RoboticsToolBox.</span></span><span class="sig-name descname"><span class="pre">Bestman_sim_panda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_panda.html#Bestman_sim_panda"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_panda" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#RoboticsToolBox.Bestman_sim" title="RoboticsToolBox.Bestman_sim.Bestman_sim"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bestman_sim</span></code></a></p>
+<p>A class representing a simulation for the Bestman robot equipped with a Panda arm.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_panda.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_panda.html#Bestman_sim_panda.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_panda.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the Bestman_sim_panda with the given parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> (<em>int</em>) – The PyBullet client ID.</p></li>
+<li><p><strong>visualizer</strong> (<em>bool</em>) – Flag indicating whether visualization is enabled.</p></li>
+<li><p><strong>cfg</strong> (<em>dict</em>) – Configuration settings.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_panda.sim_open_gripper">
+<span class="sig-name descname"><span class="pre">sim_open_gripper</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_panda.html#Bestman_sim_panda.sim_open_gripper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_panda.sim_open_gripper" title="Permalink to this definition"></a></dt>
+<dd><p>open gripper</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_panda.sim_close_gripper">
+<span class="sig-name descname"><span class="pre">sim_close_gripper</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_panda.html#Bestman_sim_panda.sim_close_gripper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_panda.sim_close_gripper" title="Permalink to this definition"></a></dt>
+<dd><p>close gripper</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_panda.sim_move_gripper">
+<span class="sig-name descname"><span class="pre">sim_move_gripper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">open_width</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_panda.html#Bestman_sim_panda.sim_move_gripper"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_panda.sim_move_gripper" title="Permalink to this definition"></a></dt>
+<dd><p>move gripper to special width</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>open_width</strong> (<em>float</em>) – gripper open width</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_panda.sim_create_gripper_constraint">
+<span class="sig-name descname"><span class="pre">sim_create_gripper_constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_panda.html#Bestman_sim_panda.sim_create_gripper_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_panda.sim_create_gripper_constraint" title="Permalink to this definition"></a></dt>
+<dd><p>Activate or deactivate the gripper for a movable object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object</strong> (<em>str</em>) – The name or ID of the object related to gripper action.</p></li>
+<li><p><strong>link_id</strong> (<em>int</em>) – The ID of the link on the object to be grasped.</p></li>
+<li><p><strong>value</strong> (<em>int</em>) – 0 or 1, where 0 means deactivate (ungrasp) and 1 means activate (grasp).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_panda.sim_remove_gripper_constraint">
+<span class="sig-name descname"><span class="pre">sim_remove_gripper_constraint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_panda.html#Bestman_sim_panda.sim_remove_gripper_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_panda.sim_remove_gripper_constraint" title="Permalink to this definition"></a></dt>
+<dd><p>remove constraint</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_panda.pick">
+<span class="sig-name descname"><span class="pre">pick</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pick_pose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_panda.html#Bestman_sim_panda.pick"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_panda.pick" title="Permalink to this definition"></a></dt>
+<dd><p>Pick up the specified object without collision.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pick_pose</strong> (<a class="reference internal" href="#RoboticsToolBox.Pose" title="RoboticsToolBox.Pose"><em>Pose</em></a>) – pick pose</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_panda.place">
+<span class="sig-name descname"><span class="pre">place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">place_pose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_panda.html#Bestman_sim_panda.place"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_panda.place" title="Permalink to this definition"></a></dt>
+<dd><p>Place an object at the specified goal pose without collision.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>place_pose</strong> (<a class="reference internal" href="#RoboticsToolBox.Pose" title="RoboticsToolBox.Pose"><em>Pose</em></a>) – The pose where the object will be placed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_panda.pick_place">
+<span class="sig-name descname"><span class="pre">pick_place</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_pose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_panda.html#Bestman_sim_panda.pick_place"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_panda.pick_place" title="Permalink to this definition"></a></dt>
+<dd><p>Perform a pick and place operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object</strong> (<em>str</em>) – The name or ID of the object to be picked up.</p></li>
+<li><p><strong>goal_pose</strong> (<a class="reference internal" href="#RoboticsToolBox.Pose" title="RoboticsToolBox.Pose"><em>Pose</em></a>) – The pose where the object will be placed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim_panda.align_grasp_pose_to_tcp">
+<span class="sig-name descname"><span class="pre">align_grasp_pose_to_tcp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_init</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_pose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim_panda.html#Bestman_sim_panda.align_grasp_pose_to_tcp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim_panda.align_grasp_pose_to_tcp" title="Permalink to this definition"></a></dt>
+<dd><p>Computes the homogeneous transformation matrix that aligns the z-axis of the target pose to the z-axis of the initial pose.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>R_init</strong> (<em>np.ndarray</em>) – 4x4 homogeneous matrix representing the initial rotation and translation of the end of the robot.</p></li>
+<li><p><strong>R_target</strong> (<em>np.ndarray</em>) – 4x4 homogeneous matrix representing the rotation and translation of the target grasp.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>4x4 homogeneous transformation matrix that aligns the z-axis of the target to the z-axis of the initial pose.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RoboticsToolBox.</span></span><span class="sig-name descname"><span class="pre">Bestman_sim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim" title="Permalink to this definition"></a></dt>
+<dd><p>A basic class for BestMan robot</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.client">
+<span class="sig-name descname"><span class="pre">client</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.client" title="Permalink to this definition"></a></dt>
+<dd><p>The pybullet client object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.client_id">
+<span class="sig-name descname"><span class="pre">client_id</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.client_id" title="Permalink to this definition"></a></dt>
+<dd><p>The client id returned by the pybullet client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.target_distance">
+<span class="sig-name descname"><span class="pre">target_distance</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.target_distance" title="Permalink to this definition"></a></dt>
+<dd><p>The target distance for the PID controller.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.controller">
+<span class="sig-name descname"><span class="pre">controller</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.controller" title="Permalink to this definition"></a></dt>
+<dd><p>The PID controller object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.rotated">
+<span class="sig-name descname"><span class="pre">rotated</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.rotated" title="Permalink to this definition"></a></dt>
+<dd><p>A flag indicating whether the object has been rotated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.init_pos">
+<span class="sig-name descname"><span class="pre">init_pos</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.init_pos" title="Permalink to this definition"></a></dt>
+<dd><p>The initial position object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.base_id">
+<span class="sig-name descname"><span class="pre">base_id</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.base_id" title="Permalink to this definition"></a></dt>
+<dd><p>The base id of the URDF model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.arm_id">
+<span class="sig-name descname"><span class="pre">arm_id</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.arm_id" title="Permalink to this definition"></a></dt>
+<dd><p>The arm id of the URDF model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.arm_joints_idx">
+<span class="sig-name descname"><span class="pre">arm_joints_idx</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.arm_joints_idx" title="Permalink to this definition"></a></dt>
+<dd><p>A list of joint indexes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.arm_height">
+<span class="sig-name descname"><span class="pre">arm_height</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.arm_height" title="Permalink to this definition"></a></dt>
+<dd><p>The height of the arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.end_effector_index">
+<span class="sig-name descname"><span class="pre">end_effector_index</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.end_effector_index" title="Permalink to this definition"></a></dt>
+<dd><p>The index of the end effector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.tcp_link">
+<span class="sig-name descname"><span class="pre">tcp_link</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.tcp_link" title="Permalink to this definition"></a></dt>
+<dd><p>The tcp link index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.tcp_height">
+<span class="sig-name descname"><span class="pre">tcp_height</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.tcp_height" title="Permalink to this definition"></a></dt>
+<dd><p>The height of the tcp link.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.visualizer">
+<span class="sig-name descname"><span class="pre">visualizer</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.visualizer" title="Permalink to this definition"></a></dt>
+<dd><p>The visualizer object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.gripper_id">
+<span class="sig-name descname"><span class="pre">gripper_id</span></span><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.gripper_id" title="Permalink to this definition"></a></dt>
+<dd><p>The gripper id. Initialized to None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize a new robot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> (<em>object</em>) – The pybullet client object.</p></li>
+<li><p><strong>visualizer</strong> (<em>object</em>) – The visualizer object.</p></li>
+<li><p><strong>cfg</strong> (<em>object</em>) – Configuration object containing parameters for the PID controller and robot setup.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_base_id">
+<span class="sig-name descname"><span class="pre">sim_get_base_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_base_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_base_id" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the ID of the robot base.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The ID of the robot base.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_current_base_pose">
+<span class="sig-name descname"><span class="pre">sim_get_current_base_pose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_current_base_pose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_current_base_pose" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the current position and orientation of the robot base.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>A Pose object representing the current pose of the base.</dt><dd><p>The pose contains the position as a list [x, y, z] and the orientation as a list [roll, pitch, yaw].</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#RoboticsToolBox.Pose" title="RoboticsToolBox.Pose">Pose</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_stop_base">
+<span class="sig-name descname"><span class="pre">sim_stop_base</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_stop_base"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_stop_base" title="Permalink to this definition"></a></dt>
+<dd><p>Stops the movement of the robot base by setting its velocity to zero.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the base has been successfully stopped.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_rotate_base">
+<span class="sig-name descname"><span class="pre">sim_rotate_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_yaw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradual</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_rotate_base"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_rotate_base" title="Permalink to this definition"></a></dt>
+<dd><p>Rotate base to a specified yaw angle. Can be done gradually or at once.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_yaw</strong> (<em>float</em>) – The target yaw angle (in radians) for the base.</p></li>
+<li><p><strong>gradual</strong> (<em>bool</em>) – If True, the rotation is done gradually. Otherwise, it’s instant.</p></li>
+<li><p><strong>step_size</strong> (<em>float</em><em>, </em><em>optional</em>) – Angle increment for each step in radians. Only used if gradual=True.</p></li>
+<li><p><strong>delay_time</strong> (<em>float</em><em>, </em><em>optional</em>) – Delay in seconds after each step. Only used if gradual=True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_action">
+<span class="sig-name descname"><span class="pre">sim_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_action"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_action" title="Permalink to this definition"></a></dt>
+<dd><p>Ajust base position using PID controller’s output</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>output</strong> (<em>float</em>) – The output of the PID controller, which is used to calculate the new position of the robot’s base.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_move_base_to_waypoint">
+<span class="sig-name descname"><span class="pre">sim_move_base_to_waypoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">waypoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_move_base_to_waypoint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_move_base_to_waypoint" title="Permalink to this definition"></a></dt>
+<dd><p>Move base to waypoint
+The robot first rotates towards the target, and then moves towards it in a straight line.
+The movement is controlled by a controller (assumed to be a PID controller) that adjusts the velocity of the robot based on the distance to the target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>waypoint</strong> (<a class="reference internal" href="#RoboticsToolBox.Pose" title="RoboticsToolBox.Pose"><em>Pose</em></a>) – The target pose (position and orientation) for the robot. This should be an instance of a Pose class, which is assumed to have ‘x’ and ‘y’ properties.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_navigate_base">
+<span class="sig-name descname"><span class="pre">sim_navigate_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goal_base_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_navigate_base"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_navigate_base" title="Permalink to this definition"></a></dt>
+<dd><p>Navigate a robot from its current position to a specified goal position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>goal_base_pose</strong> (<a class="reference internal" href="#RoboticsToolBox.Pose" title="RoboticsToolBox.Pose"><em>Pose</em></a>) – The target pose (position and orientation) for the robot.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_calculate_nav_error">
+<span class="sig-name descname"><span class="pre">sim_calculate_nav_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goal_pose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_calculate_nav_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_calculate_nav_error" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the navigation error for performing pick-and-place manipulation of an object using a robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>goal_position</strong> – The desired goal position for the target object.</p></li>
+<li><p><strong>goal_orientation</strong> – The desired goal orientation for the target object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_arm_id">
+<span class="sig-name descname"><span class="pre">sim_get_arm_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_arm_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_arm_id" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the ID of the robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The ID of the robot arm.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_DOF">
+<span class="sig-name descname"><span class="pre">sim_get_DOF</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_DOF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_DOF" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the degree of freedom (DOF) of the robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The degree of freedom of the robot arm.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_arm_joint_idx">
+<span class="sig-name descname"><span class="pre">sim_get_arm_joint_idx</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_arm_joint_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_arm_joint_idx" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the indices of the joints in the robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of indices for the joints in the robot arm.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_arm_all_joint_idx">
+<span class="sig-name descname"><span class="pre">sim_get_arm_all_joint_idx</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_arm_all_joint_idx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_arm_all_joint_idx" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the indices of the joints in the robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of indices for the joints in the robot arm.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_tcp_link">
+<span class="sig-name descname"><span class="pre">sim_get_tcp_link</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_tcp_link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_tcp_link" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the TCP (Tool Center Point) link of the robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The TCP link of the robot arm.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_tcp_link_height">
+<span class="sig-name descname"><span class="pre">sim_get_tcp_link_height</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_tcp_link_height"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_tcp_link_height" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the TCP (Tool Center Point) link height of the robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The TCP link of the robot arm.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_end_effector_link">
+<span class="sig-name descname"><span class="pre">sim_get_end_effector_link</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_end_effector_link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_end_effector_link" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the end effector link id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The end effector link id of the robot arm.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_arm_all_jointInfo">
+<span class="sig-name descname"><span class="pre">sim_get_arm_all_jointInfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_arm_all_jointInfo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_arm_all_jointInfo" title="Permalink to this definition"></a></dt>
+<dd><p>get all arm joints info</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>joint info list of all arm active joint</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_joint_bounds">
+<span class="sig-name descname"><span class="pre">sim_get_joint_bounds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_joint_bounds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_joint_bounds" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the joint bounds of the robot arm.</p>
+<p>By default, this function reads the joint bounds from pybullet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list of tuples representing the joint bounds, where each tuple contains the minimum and maximum values for a joint.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_current_joint_values">
+<span class="sig-name descname"><span class="pre">sim_get_current_joint_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_current_joint_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_current_joint_values" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve arm’s joint angle</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_current_end_effector_pose">
+<span class="sig-name descname"><span class="pre">sim_get_current_end_effector_pose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_current_end_effector_pose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_current_end_effector_pose" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve arm’s end effect information</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_set_arm_to_joint_values">
+<span class="sig-name descname"><span class="pre">sim_set_arm_to_joint_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joint_values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_set_arm_to_joint_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_set_arm_to_joint_values" title="Permalink to this definition"></a></dt>
+<dd><p>Set arm to move to a specific set of joint angles, witout considering physics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>joint_values</strong> – A list of desired joint angles (in radians) for each joint of the arm.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_debug_set_arm_to_joint_values">
+<span class="sig-name descname"><span class="pre">sim_debug_set_arm_to_joint_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_debug_set_arm_to_joint_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_debug_set_arm_to_joint_values" title="Permalink to this definition"></a></dt>
+<dd><p>Manually set each joint value of the arm for debugging purposes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_move_arm_to_joint_values">
+<span class="sig-name descname"><span class="pre">sim_move_arm_to_joint_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joint_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.015</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_move_arm_to_joint_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_move_arm_to_joint_values" title="Permalink to this definition"></a></dt>
+<dd><p>Move arm to move to a specific set of joint angles, with considering physics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>joint_values</strong> – A list of desired joint angles (in radians) for each joint of the arm.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_joints_to_cartesian">
+<span class="sig-name descname"><span class="pre">sim_joints_to_cartesian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">joint_values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_joints_to_cartesian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_joints_to_cartesian" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms the robot arm’s joint angles to its Cartesian coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>joint_values</strong> (<em>list</em>) – A list of joint angles for the robot arm.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the Cartesian coordinates (position and orientation) of the robot arm.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_cartesian_to_joints">
+<span class="sig-name descname"><span class="pre">sim_cartesian_to_joints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iterations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_cartesian_to_joints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_cartesian_to_joints" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms the robot arm’s Cartesian coordinates to its joint angles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> (<em>list</em>) – The Cartesian position of the robot arm.</p></li>
+<li><p><strong>orientation</strong> (<em>list</em>) – The Cartesian orientation of the robot arm.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of joint angles corresponding to the given Cartesian coordinates.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_rotate_end_effector">
+<span class="sig-name descname"><span class="pre">sim_rotate_end_effector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_rotate_end_effector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_rotate_end_effector" title="Permalink to this definition"></a></dt>
+<dd><p>Rotate the end effector of the robot arm by a specified angle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>angle</strong> (<em>float</em>) – The desired rotation angle in radians.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_move_end_effector_to_goal_pose">
+<span class="sig-name descname"><span class="pre">sim_move_end_effector_to_goal_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">end_effector_goal_pose</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_move_end_effector_to_goal_pose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_move_end_effector_to_goal_pose" title="Permalink to this definition"></a></dt>
+<dd><p>Move arm’s end effector to a target position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>end_effector_goal_pose</strong> (<a class="reference internal" href="#RoboticsToolBox.Pose" title="RoboticsToolBox.Pose"><em>Pose</em></a>) – The desired pose of the end effector (includes both position and orientation).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_execute_trajectory">
+<span class="sig-name descname"><span class="pre">sim_execute_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trajectory</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_execute_trajectory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_execute_trajectory" title="Permalink to this definition"></a></dt>
+<dd><p>Execute the path planned by Planner</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>trajectory</strong> – List, each element is a list of angles, corresponding to a transformation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_calculate_IK_error">
+<span class="sig-name descname"><span class="pre">sim_calculate_IK_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">goal_pose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_calculate_IK_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_calculate_IK_error" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the inverse kinematics (IK) error for performing pick-and-place manipulation of an object using a robot arm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>goal_position</strong> – The desired goal position for the target object.</p></li>
+<li><p><strong>goal_orientation</strong> – The desired goal orientation for the target object.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_robot_size">
+<span class="sig-name descname"><span class="pre">sim_get_robot_size</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_robot_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_robot_size" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves the maximum size of the robot (arm and base) in meters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The maximum size of the robot in meters.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_sync_base_arm_pose">
+<span class="sig-name descname"><span class="pre">sim_sync_base_arm_pose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_sync_base_arm_pose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_sync_base_arm_pose" title="Permalink to this definition"></a></dt>
+<dd><p>Synchronizes the pose of the robot arm with the base.</p>
+<p>This function ensures that the positions of the robot arm and base are aligned.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_update_camera">
+<span class="sig-name descname"><span class="pre">sim_update_camera</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_update_camera"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_update_camera" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_camera_pose">
+<span class="sig-name descname"><span class="pre">sim_get_camera_pose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_camera_pose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_camera_pose" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_camera_rgb_image">
+<span class="sig-name descname"><span class="pre">sim_get_camera_rgb_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable_show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_camera_rgb_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_camera_rgb_image" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_camera_depth_image">
+<span class="sig-name descname"><span class="pre">sim_get_camera_depth_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable_show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable_save</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_camera_depth_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_camera_depth_image" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_get_camera_3d_points">
+<span class="sig-name descname"><span class="pre">sim_get_camera_3d_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable_show</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_get_camera_3d_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_get_camera_3d_points" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_visualize_camera_3d_points">
+<span class="sig-name descname"><span class="pre">sim_visualize_camera_3d_points</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_visualize_camera_3d_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_visualize_camera_3d_points" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Bestman_sim.sim_trans_camera_to_world">
+<span class="sig-name descname"><span class="pre">sim_trans_camera_to_world</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Bestman_sim.html#Bestman_sim.sim_trans_camera_to_world"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Bestman_sim.sim_trans_camera_to_world" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RoboticsToolBox.Pose">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RoboticsToolBox.</span></span><span class="sig-name descname"><span class="pre">Pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Pose.html#Pose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Pose" title="Permalink to this definition"></a></dt>
+<dd><p>A class representing a 3D pose consisting of position and orientation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Pose.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orientation</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Pose.html#Pose.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Pose.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize a new Pose object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position</strong> (<em>list / np.ndarray</em>) – A list or array of three floats representing the position in 3D space.</p></li>
+<li><p><strong>orientation</strong> (<em>list</em><em>, </em><em>tuple</em><em>, </em><em>np.ndarray</em>) – A list, tuple, or array representing the orientation in 3D space.
+It can be either Euler angles (3 elements), a quaternion (4 elements), or a 3x3 rotation matrix.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Pose.get_position">
+<span class="sig-name descname"><span class="pre">get_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Pose.html#Pose.get_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Pose.get_position" title="Permalink to this definition"></a></dt>
+<dd><p>get position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>position</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Pose.get_orientation">
+<span class="sig-name descname"><span class="pre">get_orientation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'quaternion'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Pose.html#Pose.get_orientation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Pose.get_orientation" title="Permalink to this definition"></a></dt>
+<dd><p>get orientation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>orientation</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RoboticsToolBox.Pose.print">
+<span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'quaternion'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/RoboticsToolBox/Pose.html#Pose.print"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#RoboticsToolBox.Pose.print" title="Permalink to this definition"></a></dt>
+<dd><p>print pose</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, kui yang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anygrasp &mdash; BestMan_Pybullet 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css" />
+
+  
+    <link rel="shortcut icon" href="../../../../_static/AL_logo.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../../../../index.html">
+            
+              <img src="../../../../_static/BestMan_logo_AL.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Anygrasp</a><ul>
+<li><a class="reference internal" href="#Perception.Grasp_Pose_Estimation.Anygrasp"><code class="docutils literal notranslate"><span class="pre">Anygrasp</span></code></a><ul>
+<li><a class="reference internal" href="#Perception.Grasp_Pose_Estimation.Anygrasp.cfgs"><code class="docutils literal notranslate"><span class="pre">Anygrasp.cfgs</span></code></a></li>
+<li><a class="reference internal" href="#Perception.Grasp_Pose_Estimation.Anygrasp.grasping_model"><code class="docutils literal notranslate"><span class="pre">Anygrasp.grasping_model</span></code></a></li>
+<li><a class="reference internal" href="#Perception.Grasp_Pose_Estimation.Anygrasp.cam"><code class="docutils literal notranslate"><span class="pre">Anygrasp.cam</span></code></a></li>
+<li><a class="reference internal" href="#Perception.Grasp_Pose_Estimation.Anygrasp.__init__"><code class="docutils literal notranslate"><span class="pre">Anygrasp.__init__()</span></code></a></li>
+<li><a class="reference internal" href="#Perception.Grasp_Pose_Estimation.Anygrasp.Grasp_Pose_Estimation"><code class="docutils literal notranslate"><span class="pre">Anygrasp.Grasp_Pose_Estimation()</span></code></a></li>
+<li><a class="reference internal" href="#Perception.Grasp_Pose_Estimation.Anygrasp.print_filter_gg"><code class="docutils literal notranslate"><span class="pre">Anygrasp.print_filter_gg()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Perception.Grasp_Pose_Estimation.AnyGrasp.utils.sample_points"><code class="docutils literal notranslate"><span class="pre">sample_points()</span></code></a></li>
+<li><a class="reference internal" href="#Perception.Grasp_Pose_Estimation.AnyGrasp.utils.draw_rectangle"><code class="docutils literal notranslate"><span class="pre">draw_rectangle()</span></code></a></li>
+<li><a class="reference internal" href="#Perception.Grasp_Pose_Estimation.AnyGrasp.utils.visualize_cloud_geometries"><code class="docutils literal notranslate"><span class="pre">visualize_cloud_geometries()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">BestMan_Pybullet</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Anygrasp</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/AutonoBot-Lab/BestMan_Pybullet/blob/grasp/docs/references/Perception/Grasp_Pose_Estimation/AnyGrasp/Anygrasp.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="anygrasp">
+<h1>Anygrasp<a class="headerlink" href="#anygrasp" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Perception.Grasp_Pose_Estimation.Anygrasp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Perception.Grasp_Pose_Estimation.</span></span><span class="sig-name descname"><span class="pre">Anygrasp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfgs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Perception/Grasp_Pose_Estimation/AnyGrasp/Anygrasp.html#Anygrasp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Perception.Grasp_Pose_Estimation.Anygrasp" title="Permalink to this definition"></a></dt>
+<dd><p>A class for grasp pose estimation using AnyGrasp model.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Perception.Grasp_Pose_Estimation.Anygrasp.cfgs">
+<span class="sig-name descname"><span class="pre">cfgs</span></span><a class="headerlink" href="#Perception.Grasp_Pose_Estimation.Anygrasp.cfgs" title="Permalink to this definition"></a></dt>
+<dd><p>Configuration settings.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Perception.Grasp_Pose_Estimation.Anygrasp.grasping_model">
+<span class="sig-name descname"><span class="pre">grasping_model</span></span><a class="headerlink" href="#Perception.Grasp_Pose_Estimation.Anygrasp.grasping_model" title="Permalink to this definition"></a></dt>
+<dd><p>Instance of AnyGrasp model.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Perception.Grasp_Pose_Estimation.Anygrasp.cam">
+<span class="sig-name descname"><span class="pre">cam</span></span><a class="headerlink" href="#Perception.Grasp_Pose_Estimation.Anygrasp.cam" title="Permalink to this definition"></a></dt>
+<dd><p>Camera parameters.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Perception.Grasp_Pose_Estimation.Anygrasp.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cfgs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Perception/Grasp_Pose_Estimation/AnyGrasp/Anygrasp.html#Anygrasp.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Perception.Grasp_Pose_Estimation.Anygrasp.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize Anygrasp class with configurations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cfgs</strong> – Configuration settings.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Perception.Grasp_Pose_Estimation.Anygrasp.Grasp_Pose_Estimation">
+<span class="sig-name descname"><span class="pre">Grasp_Pose_Estimation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">camera</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../../../Visualization.html#Visualization.Camera.Camera" title="Visualization.Camera.Camera"><span class="pre">Camera</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">seg_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crop_flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Perception/Grasp_Pose_Estimation/AnyGrasp/Anygrasp.html#Anygrasp.Grasp_Pose_Estimation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Perception.Grasp_Pose_Estimation.Anygrasp.Grasp_Pose_Estimation" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the optimal grasping pose.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cam</strong> (<em>CameraParameters</em>) – Camera internal parameters.</p></li>
+<li><p><strong>points</strong> (<em>np.ndarray</em>) – 3D point cloud data.</p></li>
+<li><p><strong>seg_mask</strong> (<em>np.ndarray</em>) – Object Mask.</p></li>
+<li><p><strong>bbox</strong> (<em>Bbox</em>) – Object bounding box.</p></li>
+<li><p><strong>crop_flag</strong> (<em>bool</em><em>, </em><em>optional</em>) – If point cloud has been crop by seg mask. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Status and best grasp pose.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[bool, <a class="reference internal" href="../../../RoboticsToolBox.html#RoboticsToolBox.Pose" title="RoboticsToolBox.Pose">Pose</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Perception.Grasp_Pose_Estimation.Anygrasp.print_filter_gg">
+<span class="sig-name descname"><span class="pre">print_filter_gg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_gg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Perception/Grasp_Pose_Estimation/AnyGrasp/Anygrasp.html#Anygrasp.print_filter_gg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Perception.Grasp_Pose_Estimation.Anygrasp.print_filter_gg" title="Permalink to this definition"></a></dt>
+<dd><p>print grasp pose and score, Descending.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>(</strong><strong>)</strong> (<em>filter_gg</em>) – anygrasp grasp pose info</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-Perception.Grasp_Pose_Estimation.AnyGrasp.utils"></span><dl class="py function">
+<dt class="sig sig-object py" id="Perception.Grasp_Pose_Estimation.AnyGrasp.utils.sample_points">
+<span class="sig-prename descclassname"><span class="pre">Perception.Grasp_Pose_Estimation.AnyGrasp.utils.</span></span><span class="sig-name descname"><span class="pre">sample_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Perception/Grasp_Pose_Estimation/AnyGrasp/utils.html#sample_points"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Perception.Grasp_Pose_Estimation.AnyGrasp.utils.sample_points" title="Permalink to this definition"></a></dt>
+<dd><p>Randomly sample some points from a given set of points at a specified sampling rate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>np.ndarray</em>) – Array of points to sample from.</p></li>
+<li><p><strong>sampling_rate</strong> (<em>float</em><em>, </em><em>optional</em>) – Rate at which to sample points. Defaults to 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sampled points and their indices.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[np.ndarray, np.ndarray]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Perception.Grasp_Pose_Estimation.AnyGrasp.utils.draw_rectangle">
+<span class="sig-prename descclassname"><span class="pre">Perception.Grasp_Pose_Estimation.AnyGrasp.utils.</span></span><span class="sig-name descname"><span class="pre">draw_rectangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Perception/Grasp_Pose_Estimation/AnyGrasp/utils.html#draw_rectangle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Perception.Grasp_Pose_Estimation.AnyGrasp.utils.draw_rectangle" title="Permalink to this definition"></a></dt>
+<dd><p>Draw a green rectangle on the given image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>ImageDraw</em>) – Image on which to draw the rectangle.</p></li>
+<li><p><strong>bbox</strong> (<em>Bbox</em>) – Bounding box coordinates as a tuple (x1, y1, x2, y2).</p></li>
+<li><p><strong>width</strong> (<em>int</em><em>, </em><em>optional</em>) – Width of the rectangle outline. Defaults to 5.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Image with the rectangle drawn.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ImageDraw</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Perception.Grasp_Pose_Estimation.AnyGrasp.utils.visualize_cloud_geometries">
+<span class="sig-prename descclassname"><span class="pre">Perception.Grasp_Pose_Estimation.AnyGrasp.utils.</span></span><span class="sig-name descname"><span class="pre">visualize_cloud_geometries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cloud</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visualize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/Perception/Grasp_Pose_Estimation/AnyGrasp/utils.html#visualize_cloud_geometries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Perception.Grasp_Pose_Estimation.AnyGrasp.utils.visualize_cloud_geometries" title="Permalink to this definition"></a></dt>
+<dd><p>Visualize point cloud with additional geometries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cloud</strong> (<em>o3d.geometry.PointCloud</em>) – Point cloud of points.</p></li>
+<li><p><strong>geometries</strong> (<em>list</em>) – List of geometries to visualize with the point cloud.</p></li>
+<li><p><strong>translation</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – Translation vector. Defaults to None.</p></li>
+<li><p><strong>rotation</strong> (<em>np.ndarray</em><em>, </em><em>optional</em>) – Rotation matrix. Defaults to None.</p></li>
+<li><p><strong>visualize</strong> (<em>bool</em><em>, </em><em>optional</em>) – Flag to show the visualization window. Defaults to True.</p></li>
+<li><p><strong>save_file</strong> (<em>str</em><em>, </em><em>optional</em>) – File name to save the visualization. Defaults to None.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, kui yang.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX', {
+          'anonymize_ip': false,
+      });
+    </script> 
+
+</body>
+</html>

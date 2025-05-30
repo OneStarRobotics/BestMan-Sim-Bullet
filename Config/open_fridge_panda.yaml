@@ -1,0 +1,14 @@
+Visualizer:
+  Camera: 
+      dist: 2.0
+      position: [2.0, 5.0, 1.0]
+      yaw: -86.4
+      pitch: -40.0
+
+Robot:
+  base_init_pose: [2.0, 4.9, 0, 0.0, 0.0, "math.pi / 2"]
+  arm_reset_jointValues: [0.98, 0.458, 0.31, -2.24, -0.30, 2.66, 2.32]                  # The initial angle of arm joint
+  arm_urdf_path: "Asset/Robot/mobile_manipulator/arm/franka/urdf/panda.urdf"          # arm urdf
+  arm_num_dofs: 7                                      # 7 DOF
+  eef_id: 11
+  tcp_link: -1
