@@ -1,5 +1,5 @@
 <br>
-<p style="color: red;">Please Download <a href="www.bing.com">these necessary compressed files</a> and decompressed them in this project files. </p>
+<p style="color: red;">Notice:  Please Download <a href="www.bing.com">these necessary compressed files</a> and decompressed them in this project. </p>
 <p align="center">
 <h1 align="center"><strong>BestMan: A Versatile Mobile Manipulation Platform with Seamless
 Sim2Real Integration and Modular Algorithm Deployment</strong></h1>
