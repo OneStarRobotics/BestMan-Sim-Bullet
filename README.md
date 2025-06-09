@@ -1,5 +1,5 @@
 <br>
-<p style="color: red;">Notice:  Please Download <a href="https://drive.google.com/drive/folders/1j73iejffo2SeBglY_Wjdo9-3MVpAdAGu?usp=drive_link">these necessary compressed files</a> and decompressed them in this project. </p>
+<p style="color: red;">Notice:  Please Download <a href="https://drive.google.com/drive/folders/1j73iejffo2SeBglY_Wjdo9-3MVpAdAGu?usp=sharing">these necessary compressed files</a> and decompressed them in this project. </p>
 <p align="center">
 <h1 align="center"><strong>BestMan: A Versatile Mobile Manipulation Platform with Seamless
 Sim2Real Integration and Modular Algorithm Deployment</strong></h1>
