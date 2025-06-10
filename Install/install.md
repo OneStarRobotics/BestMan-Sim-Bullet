@@ -13,8 +13,8 @@
 
 
 ```
-git clone https://github.com/AutonoBot-Lab/BestMan_Pybullet.git
-cd BestMan_Pybullet
+git clone https://github.com/OneStarRobotics/BestMan-Sim-Bullet.git
+cd BestMan-Sim-Bullet
 git submodule update --init --recursive
 ```
 ><p >Please Download <a href="https://drive.google.com/drive/folders/1j73iejffo2SeBglY_Wjdo9-3MVpAdAGu?usp=sharing">the necessary compressed file</a> and decompressed them in this project. 
@@ -86,27 +86,7 @@ During the installation of these submodules, due to different GPU driver version
 
 ## Install with Docker (Windows)
 
-> ***Note**: Docker image does not include submodules such as LangSAM and Anygrasp, only basic installation.*
-
-1. Pull BestMan docker image
-
-```
-docker pull crpi-9cw0y3g974qhulj0.cn-hangzhou.personal.cr.aliyuncs.com/leeyanyu/bestman:0.1.0
-```
-
-2. Create docker container
-
-```
-docker run -it --gpus all --name BestMan crpi-9cw0y3g974qhulj0.cn-hangzhou.personal.cr.aliyuncs.com/leeyanyu/bestman:0.1.0
-```
-
-3. Install [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/), Start and keep running in the background.
-
-4. Execute `echo $DISPLAY` inside the container, Make sure the result is `host.docker.internal:0` so that it can be visualized on the host machine, if not:
-
-```
-export DISPLAY=host.docker.internal:0
-```
+Coming soon
 
 
 ## Install with Docker (Linux)
