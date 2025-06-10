@@ -41,7 +41,7 @@ BestMan-Sim-Bullet is A mobile manipulator (with a wheel-base and arm) platform 
 
 ## 🚀 Update
 
-- \[V1.0.0\] We Release the platform with basic modules、functions and demos.
+- \[V1.0.0\] Release the platform with basic modules、functions and demos.
 
 ## 🎯 Framework
 
