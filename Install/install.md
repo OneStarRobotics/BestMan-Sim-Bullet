@@ -6,13 +6,20 @@
 
 > ***Note**: This will only install the basic module. For other algorithm submodules, please follow the instructions [Algorithm Submodule Env](#algorithm-submodule-env) to install as needed.*
 
+
+
+
 1. Pull the repository and update the submodule
+
 
 ```
 git clone https://github.com/AutonoBot-Lab/BestMan_Pybullet.git
 cd BestMan_Pybullet
 git submodule update --init --recursive
 ```
+><p >Please Download <a href="https://drive.google.com/drive/folders/1j73iejffo2SeBglY_Wjdo9-3MVpAdAGu?usp=sharing">the necessary compressed file</a> and decompressed them in this project. 
+
+
 
 2. Run the following script to add the project to the PYTHON search path
 ```
