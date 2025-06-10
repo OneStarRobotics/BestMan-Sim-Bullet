@@ -23,12 +23,12 @@
 ## 📋 Contents
 
 - [🏠 About](#-about)
+- [🚀 Update](#-update)
 - [🎯 Framework](#-framework)
 - [🏠 Getting Started](#-getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [👨‍💻 Examples](#-examples)
-- [🚀 Update](#-update)
 - [👏 Acknowledgements](#-acknowledgements)
 
 
