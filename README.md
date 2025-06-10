@@ -38,6 +38,11 @@ BestMan-Sim-Bullet is A mobile manipulator (with a wheel-base and arm) platform 
 * 🏙️ <b>Assets</b>, the assets include a large and diverse collection of scenes, objects, and robots..
 * 🤖 <b>Unified Robotics APIs</b>, for both simulation and real devices, the Unified Robotics APIs offers multilevel technical integration.
 * 🧑‍🤝‍🧑 <b>Modular Platform</b>, The modular design includes various modules like perception and control, making it highly extensible and developer-friendly for additional functionalities.
+
+## 🚀 Update
+
+- \[V1.0.0\] We Release the platform with basic modules、functions and demos.
+
 ## 🎯 Framework
 
 ![Framework](docs/static/asset/image/BestMan_Framework.png)
@@ -60,9 +65,7 @@ We provide the installation guide [here](Install/install.md). You can install lo
 
 Enter `Examples` directory and run the demos. You can also modify the parameters corresponding to the demo.
 
-## 🚀 Update
 
-- \[V1.0.0\] We Release the platform with basic modules、functions and demos.
 
 ## 📄 License
 
