@@ -6,9 +6,9 @@
 [![arxiv](https://img.shields.io/badge/arxiv-2410.13407-orange)](http://arxiv.org/abs/2410.13407)
 [![paper](https://img.shields.io/badge/Paper-%F0%9F%93%96-yellow)](https://arxiv.org/pdf/2410.13407)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebookresearch/home-robot/blob/main/LICENSE)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+<!-- [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat)](https://timothycrosley.github.io/isort/)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat)](https://timothycrosley.github.io/isort/) -->
 [![Document](https://img.shields.io/badge/Document-%F0%9F%93%98-green)](https://bestman-pybullet.readthedocs.io)
 </div>
 
@@ -22,17 +22,19 @@
 
 ## 📋 Contents
 
-- [🏠 About](#-about)
+- [📋 Contents](#-contents)
+- [🏠 What](#-what)
 - [🚀 Update](#-update)
 - [🎯 Framework](#-framework)
-- [🏠 Getting Started](#-getting-started)
+- [🏠 How to Install](#-how-to-install)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
-- [👨‍💻 Examples](#-examples)
+- [👨‍💻 How to Use](#-how-to-use)
+- [📄 License](#-license)
 - [👏 Acknowledgements](#-acknowledgements)
 
 
-## 🏠 About
+## 🏠 What
 BestMan-Sim-Bullet is A mobile manipulator (with a wheel-base and arm) platform built on PyBullet simulation with unified hardware APIs.
  It features several advancements:
 * 🏙️ <b>Assets</b>, the assets include a large and diverse collection of scenes, objects, and robots..
@@ -47,9 +49,10 @@ BestMan-Sim-Bullet is A mobile manipulator (with a wheel-base and arm) platform 
 
 ![Framework](docs/static/asset/image/BestMan_Framework.png)
 
-## 🏠 Getting Started
+## 🏠 How to Install
 
 ### Prerequisites
+
 
 > ***Note**: We recommand Ubuntu 22.04 and python version deault to 3.8.*
 
@@ -61,7 +64,7 @@ BestMan-Sim-Bullet is A mobile manipulator (with a wheel-base and arm) platform 
 
 We provide the installation guide [here](Install/install.md). You can install locally or use docker and verify the installation easily.
 
-## 👨‍💻 Examples
+## 👨‍💻 How to Use
 
 Enter `Examples` directory and run the demos. You can also modify the parameters corresponding to the demo.
 

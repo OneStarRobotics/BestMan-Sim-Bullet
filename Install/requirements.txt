@@ -1,0 +1,12 @@
+matplotlib==3.3.2
+urdfpy==0.0.22
+numpy==1.23.5
+lisdf==0.1.1
+transforms3d==0.3.1
+PyQt5==5.15.11
+opencv-python==4.1.2.30
+pybullet==3.2.6
+open3d==0.18.0
+openpyxl==3.1.5
+pybullet-rendering==0.6.5
+panda3d==1.10.13

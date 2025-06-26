@@ -4,7 +4,7 @@
 
 ### Basic Env
 
-> ***Note**: This will only install the basic module. For other algorithm submodules, please follow the instructions [Algorithm Submodule Env](#algorithm-submodule-env) to install as needed.*
+> ***Note**: This will only install the basic module. More functional modules will be continuously updated in the future.*
 
 
 
@@ -15,15 +15,15 @@
 ```
 git clone https://github.com/OneStarRobotics/BestMan-Sim-Bullet.git
 cd BestMan-Sim-Bullet
-git submodule update --init --recursive
+cd Install
+git clone https://github.com/starry521/third_party.git
 ```
-><p >Please Download <a href="https://drive.google.com/drive/folders/1j73iejffo2SeBglY_Wjdo9-3MVpAdAGu?usp=sharing">the necessary compressed file</a> and decompressed them in this project. 
+><p >Please Download <a href="https://drive.google.com/drive/folders/1j73iejffo2SeBglY_Wjdo9-3MVpAdAGu?usp=sharing">the necessary compressed file</a> and decompressed them in the main folder this project. 
 
 
 
 2. Run the following script to add the project to the PYTHON search path
 ```
-cd Install
 chmod 777 pythonpath.sh
 bash pythonpath.sh
 source ~/.bashrc
@@ -55,40 +55,16 @@ gcc -v
 g++ -v
 ```
 
-6. Configure mamba to speed up the conda environment construction (**Optional**, skip if installation is slow or fails)
-```
-conda install mamba -n base -c conda-forge
-```
+6. Create basic conda environment
 
-7. Create basic conda environment
-
-> ***Note**: If you want to install for other python version, please change to basic_env_pyxxx.yaml.*
+> **Note**: 
+> - If you want to install for other python version, please change to **basic_env_pyxx.yaml** and install the right ompl library like **ompl-1.6.0-cpxx-cpxx-manylinux_2_28_x86_64.whl** in the third_party folder.
+> - Next, we will take **Python 3.8 version** as an example for installation.
 
 ```
-conda(mamba) env create -f basic_env_py38.yaml
-conda(mamba) activate BestMan
+conda env create -f basic_env_py38.yaml
+conda activate BestMan-Sim-Bullet
+pip install -r requirements.txt
+pip install third_party/ompl/ompl-1.6.0-cp38-cp38-manylinux_2_28_x86_64.whl
 ```
 
-### Algorithm Submodule Env
-
-> ***Note**: In order to prevent conflicts in environment dependencies between different algorithm submodules in each module, we isolate the environments of each algorithm submodule of BestMan from each other for efficient management and calling.*
-
-If you want to install and use centain submodule, please see `install.md` in submodule dir. Such as:
-
-- [Lang SAM](../Perception/Object_detection/Lang_SAM/install.md)
-- [AnyGrasp](../Perception/Grasp_Pose_Estimation/AnyGrasp/install.md)
-- [URDFormer](../DigitalTwin/urdformer/install.md)
-- [ACDC](../DigitalTwin/acdc/install.md)
-- [PDDLStream](../Task_Planning/pddlstream/install.md)
-
-During the installation of these submodules, due to different GPU driver versions, the correspondence between torch, cuda and related library versions may need to be adjusted. It is recommended to refer to [here](https://pytorch.org/get-started/previous-versions/)
-
-
-## Install with Docker (Windows)
-
-Coming soon
-
-
-## Install with Docker (Linux)
-
-Coming soon
