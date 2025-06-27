@@ -6,10 +6,11 @@
 [![arxiv](https://img.shields.io/badge/arxiv-2410.13407-orange)](http://arxiv.org/abs/2410.13407)
 [![paper](https://img.shields.io/badge/Paper-%F0%9F%93%96-yellow)](https://arxiv.org/pdf/2410.13407)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/OneStarRobotics/BestMan-Sim-Bullet/blob/master/LICENSE.txt)
+[![Document](https://img.shields.io/badge/Document-%F0%9F%93%98-green)](https://bestman-pybullet.readthedocs.io)
 <!-- [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat)](https://timothycrosley.github.io/isort/) -->
-[![Document](https://img.shields.io/badge/Document-%F0%9F%93%98-green)](https://bestman-pybullet.readthedocs.io)
+
 </div>
 
 
